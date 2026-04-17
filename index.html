@@ -1,31 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Metro Luxury Inc.</title>
-
 <style>
 :root {
-  --ml-blue: #0f2a44;
-  --ml-blue-light: #1f4d7a;
-  --ml-accent: #1da1f2;
+  --ml-blue-dark: #0d3ea6;
+  --ml-blue: #1456cc;
+  --ml-blue-light: #1ec0d6;
   --ml-white: #ffffff;
-  --ml-gray: #f5f7fa;
+  --ml-gray: #f2f5f9;
 }
 
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: var(--ml-gray);
-  color: #222;
+  background: linear-gradient(135deg, #0d3ea6, #1ec0d6);
+  color: #fff;
 }
 
 .header {
-  background: white;
+  background: transparent;
   padding: 30px 20px;
   text-align: center;
-  border-bottom: 3px solid var(--ml-blue-light);
 }
 
 .header img {
@@ -33,15 +25,13 @@ body {
 }
 
 .hero {
-  background: var(--ml-blue);
-  color: white;
   text-align: center;
-  padding: 40px 20px;
+  padding: 20px 20px 40px;
 }
 
 .hero h1 {
   margin: 0;
-  font-size: 28px;
+  font-size: 32px;
 }
 
 .hero p {
@@ -57,16 +47,17 @@ body {
 }
 
 .card {
-  background: white;
+  background: rgba(255,255,255,0.95);
+  color: #222;
   padding: 25px;
-  border-radius: 10px;
+  border-radius: 12px;
   margin-bottom: 25px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .section-title {
-  color: var(--ml-blue);
-  border-bottom: 2px solid var(--ml-blue-light);
+  color: var(--ml-blue-dark);
+  border-bottom: 3px solid var(--ml-blue-light);
   padding-bottom: 5px;
   margin-bottom: 15px;
   font-weight: bold;
@@ -79,76 +70,19 @@ ul {
 .btn {
   display: inline-block;
   margin-top: 10px;
-  padding: 10px 18px;
-  background: var(--ml-accent);
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #0d3ea6, #1ec0d6);
   color: white;
-  border-radius: 5px;
+  border-radius: 6px;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .footer {
   text-align: center;
   padding: 20px;
   font-size: 14px;
-  color: #666;
+  color: white;
+  opacity: 0.8;
 }
-
 </style>
-</head>
-
-<body>
-
-<div class="header">
-  <!-- Replace 'logo.png' with your uploaded logo file name -->
-  <img src="logo.png" alt="Metro Luxury Logo">
-</div>
-
-<div class="hero">
-  <h1>Student & General Transportation Services</h1>
-  <p>Reliable, compliant, and high-volume transportation support across NYC</p>
-</div>
-
-<div class="container">
-
-  <div class="card">
-    <div class="section-title">Quick Facts</div>
-    <ul>
-      <li><strong>Drivers:</strong> 600</li>
-      <li><strong>Vehicles:</strong> 600</li>
-      <li><strong>Daily Capacity:</strong> 3,000 trips</li>
-      <li><strong>Service Area:</strong> NYC & Surrounding Counties</li>
-      <li><strong>Availability:</strong> 24/7</li>
-      <li><strong>Support:</strong> Bilingual (English/Spanish)</li>
-      <li><strong>Performance:</strong> 400,000+ trips (2025)</li>
-      <li><strong>Revenue:</strong> $11M+ (2025)</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <div class="section-title">Core Capabilities</div>
-    <ul>
-      <li>Student Transportation Support</li>
-      <li>Route Coverage & Overflow</li>
-      <li>Same-Day & Scheduled Trips</li>
-      <li>Dispatch & Logistics</li>
-      <li>GPS Trip Verification</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <div class="section-title">Contact</div>
-    <p><strong>Vram Andujar</strong><br>
-    Phone: (917) 754-0334<br>
-    Email: vandujar@metroluxurycorp.com</p>
-
-    <a class="btn" href="https://metroluxurycorp.com" target="_blank">Visit Website</a>
-  </div>
-
-</div>
-
-<div class="footer">
-  Metro Luxury Inc. | 625 E 137th St, Bronx, NY
-</div>
-
-</body>
-</html>

@@ -1,88 +1,695 @@
-<style>
-:root {
-  --ml-blue-dark: #0d3ea6;
-  --ml-blue: #1456cc;
-  --ml-blue-light: #1ec0d6;
-  --ml-white: #ffffff;
-  --ml-gray: #f2f5f9;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metro Luxury Inc. | Student & General Transportation Services</title>
+  <meta name="description" content="Metro Luxury Inc. provides student and general transportation support services across NYC." />
+  <style>
+    :root {
+      --ml-navy: #081a4b;
+      --ml-blue: #0d4fe3;
+      --ml-cyan: #19c4ea;
+      --ml-bg: #eef4fb;
+      --ml-card: #ffffff;
+      --ml-text: #16304c;
+      --ml-muted: #5d7187;
+      --ml-border: rgba(13, 79, 227, 0.14);
+      --ml-shadow: 0 18px 40px rgba(8, 26, 75, 0.12);
+      --radius: 22px;
+      --max: 1180px;
+      --hero-gradient: linear-gradient(135deg, #081a4b 0%, #0d4fe3 52%, #19c4ea 100%);
+    }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(135deg, #0d3ea6, #1ec0d6);
-  color: #fff;
-}
+    * { box-sizing: border-box; }
 
-.header {
-  background: transparent;
-  padding: 30px 20px;
-  text-align: center;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ml-text);
+      background: var(--ml-bg);
+      line-height: 1.55;
+    }
 
-.header img {
-  max-width: 260px;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.hero {
-  text-align: center;
-  padding: 20px 20px 40px;
-}
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
 
-.hero h1 {
-  margin: 0;
-  font-size: 32px;
-}
+    .topbar {
+      background: #fff;
+      border-bottom: 1px solid rgba(13, 79, 227, 0.10);
+    }
 
-.hero p {
-  margin-top: 10px;
-  font-size: 16px;
-  opacity: 0.9;
-}
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
 
-.container {
-  max-width: 1100px;
-  margin: 30px auto;
-  padding: 0 20px;
-}
+    .brand-mini {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-.card {
-  background: rgba(255,255,255,0.95);
-  color: #222;
-  padding: 25px;
-  border-radius: 12px;
-  margin-bottom: 25px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
+    .brand-mini img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      display: block;
+      background: #fff;
+      border-radius: 10px;
+    }
 
-.section-title {
-  color: var(--ml-blue-dark);
-  border-bottom: 3px solid var(--ml-blue-light);
-  padding-bottom: 5px;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
+    .brand-mini-text strong {
+      display: block;
+      color: var(--ml-navy);
+      font-size: 1rem;
+    }
 
-ul {
-  padding-left: 18px;
-}
+    .brand-mini-text span {
+      display: block;
+      color: var(--ml-muted);
+      font-size: 0.88rem;
+    }
 
-.btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 12px 20px;
-  background: linear-gradient(135deg, #0d3ea6, #1ec0d6);
-  color: white;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-}
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
-.footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  color: white;
-  opacity: 0.8;
-}
-</style>
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      color: white;
+      background: var(--hero-gradient);
+    }
+
+    .btn-secondary {
+      color: var(--ml-blue);
+      background: white;
+      border-color: rgba(13, 79, 227, 0.16);
+    }
+
+    .hero {
+      padding: 34px 0 28px;
+    }
+
+    .hero-shell {
+      background: var(--hero-gradient);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 24px 50px rgba(8, 26, 75, 0.18);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.8fr;
+    }
+
+    .hero-main {
+      padding: 42px;
+      color: white;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.18);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero-brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .hero-brand img {
+      width: 108px;
+      height: 108px;
+      object-fit: contain;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.08);
+      padding: 8px;
+    }
+
+    .hero-brand-text h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 1.05;
+    }
+
+    .hero-brand-text p {
+      margin: 8px 0 0;
+      color: rgba(255,255,255,0.88);
+      font-size: 1.02rem;
+    }
+
+    .hero-copy {
+      max-width: 62ch;
+      color: rgba(255,255,255,0.92);
+      font-size: 1.05rem;
+      margin: 0 0 22px;
+    }
+
+    .hero-tagline {
+      font-size: 1.02rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.84);
+      margin: 0 0 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      padding: 16px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.55rem;
+      margin-bottom: 4px;
+    }
+
+    .metric span {
+      color: rgba(255,255,255,0.88);
+      font-size: 0.92rem;
+    }
+
+    .hero-side {
+      background: rgba(255,255,255,0.08);
+      border-left: 1px solid rgba(255,255,255,0.14);
+      color: white;
+      padding: 38px 30px;
+    }
+
+    .hero-side h2 {
+      margin: 0 0 16px;
+      font-size: 1.4rem;
+    }
+
+    .contact-list,
+    .list-clean {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .contact-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .contact-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .badge {
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.16);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .section {
+      padding: 18px 0 12px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      color: var(--ml-navy);
+      font-size: 1.9rem;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--ml-muted);
+      max-width: 64ch;
+    }
+
+    .card,
+    .stat-card {
+      background: var(--ml-card);
+      border-radius: var(--radius);
+      box-shadow: var(--ml-shadow);
+      border: 1px solid var(--ml-border);
+    }
+
+    .stat-grid,
+    .docs-grid,
+    .three-grid,
+    .two-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .stat-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .docs-grid { grid-template-columns: 1fr 1fr; }
+    .three-grid { grid-template-columns: 1fr 1fr 1fr; }
+    .two-grid { grid-template-columns: 1fr 1fr; }
+
+    .stat-card {
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 4px;
+      background: var(--hero-gradient);
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ml-muted);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .stat-value {
+      font-size: 1.8rem;
+      color: var(--ml-navy);
+      font-weight: 800;
+      line-height: 1.08;
+      margin-bottom: 8px;
+    }
+
+    .stat-card p {
+      margin: 0;
+      color: var(--ml-muted);
+      font-size: 0.95rem;
+    }
+
+    .card {
+      padding: 26px;
+    }
+
+    .card-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ml-blue);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      color: var(--ml-navy);
+      font-size: 1.35rem;
+    }
+
+    .bullet-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .bullet-list li {
+      margin: 0 0 10px;
+    }
+
+    .list-clean li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(13, 79, 227, 0.10);
+    }
+
+    .list-clean li:last-child {
+      border-bottom: 0;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(13, 79, 227, 0.06);
+      border: 1px solid rgba(13, 79, 227, 0.10);
+      color: var(--ml-blue);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 28px;
+      background: var(--ml-navy);
+      color: rgba(255,255,255,0.86);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 22px 0;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 1050px) {
+      .hero-grid,
+      .docs-grid,
+      .three-grid,
+      .two-grid,
+      .stat-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-side {
+        border-left: 0;
+        border-top: 1px solid rgba(255,255,255,0.14);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero-grid,
+      .docs-grid,
+      .three-grid,
+      .two-grid,
+      .stat-grid,
+      .hero-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-main,
+      .hero-side,
+      .card,
+      .stat-card {
+        padding: 22px;
+      }
+
+      .hero-brand {
+        align-items: flex-start;
+      }
+
+      .hero-brand img {
+        width: 84px;
+        height: 84px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand-mini">
+        <img src="./logo.png" alt="Metro Luxury logo" onerror="this.style.display='none';" />
+        <div class="brand-mini-text">
+          <strong>Metro Luxury Inc.</strong>
+          <span>TLC Base #B01389</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a class="btn btn-secondary" href="#quick-facts">Quick Facts</a>
+        <a class="btn btn-secondary" href="#capability">Capability Statement</a>
+        <a class="btn btn-primary" href="https://metroluxurycorp.com" target="_blank" rel="noopener">Visit Website</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-shell">
+        <div class="hero-grid">
+          <div class="hero-main">
+            <div class="eyebrow">NYC Transportation Support Partner</div>
+            <div class="hero-brand">
+              <img src="./logo.png" alt="Metro Luxury logo" onerror="this.style.display='none';" />
+              <div class="hero-brand-text">
+                <h1>Metro Luxury Inc.</h1>
+                <p>Student and General Transportation Services</p>
+              </div>
+            </div>
+            <p class="hero-copy">Metro Luxury Inc. delivers reliable, compliant, and high-volume transportation support across New York City, including student transportation support, route coverage, overflow transportation, same-day trip coordination, dispatch management, GPS trip verification, and responsive customer support.</p>
+            <p class="hero-tagline">Partners in Your Health</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#quick-facts">View Quick Facts</a>
+              <a class="btn btn-secondary" href="#capability">View Capability Statement</a>
+            </div>
+            <div class="hero-metrics">
+              <div class="metric">
+                <strong>400,000+</strong>
+                <span>Trips completed in 2025</span>
+              </div>
+              <div class="metric">
+                <strong>$11M+</strong>
+                <span>Transportation services delivered in 2025</span>
+              </div>
+              <div class="metric">
+                <strong>3,000</strong>
+                <span>Daily trip capacity</span>
+              </div>
+            </div>
+          </div>
+          <aside class="hero-side">
+            <h2>Primary Contact</h2>
+            <ul class="contact-list">
+              <li><strong>Vram Andujar</strong><br />Administrator</li>
+              <li><strong>Direct:</strong> <a href="tel:+19177540334">(917) 754-0334</a></li>
+              <li><strong>Office:</strong> <a href="tel:+17186655079">(718) 665-5079</a></li>
+              <li><strong>Email:</strong> <a href="mailto:vandujar@metroluxurycorp.com">vandujar@metroluxurycorp.com</a></li>
+              <li><strong>Company Email:</strong> <a href="mailto:info@metroluxurycorp.com">info@metroluxurycorp.com</a></li>
+              <li><strong>Website:</strong> <a href="https://metroluxurycorp.com" target="_blank" rel="noopener">metroluxurycorp.com</a></li>
+              <li><strong>Address:</strong> 625 E 137th Street, Bronx, NY 10454</li>
+            </ul>
+            <div class="hero-badges">
+              <span class="badge">24/7 Availability</span>
+              <span class="badge">Bilingual Support</span>
+              <span class="badge">GPS Verified Trips</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>At a Glance</h2>
+          <p>A professional summary page built for contractor outreach, DOE meetings, and partnership conversations.</p>
+        </div>
+        <div class="stat-grid">
+          <article class="stat-card">
+            <div class="stat-label">Drivers</div>
+            <div class="stat-value">600</div>
+            <p>Scalable driver network supporting high-volume operations across NYC.</p>
+          </article>
+          <article class="stat-card">
+            <div class="stat-label">Vehicles</div>
+            <div class="stat-value">600</div>
+            <p>Fleet access supporting route coverage, overflow, and scheduled trips.</p>
+          </article>
+          <article class="stat-card">
+            <div class="stat-label">Daily Capacity</div>
+            <div class="stat-value">3,000</div>
+            <p>Available for same-day transportation, route support, and subcontracting needs.</p>
+          </article>
+          <article class="stat-card">
+            <div class="stat-label">Availability</div>
+            <div class="stat-value">24/7</div>
+            <p>Seven days a week with bilingual customer support in English and Spanish.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="quick-facts">
+      <div class="container">
+        <div class="section-head">
+          <h2>Quick Facts</h2>
+          <p>Fast-access operating details for prime contractors, procurement teams, and transportation partners.</p>
+        </div>
+        <div class="three-grid">
+          <article class="card">
+            <div class="card-badge">Capacity</div>
+            <h3>Operational Readiness</h3>
+            <ul class="list-clean">
+              <li><strong>Drivers:</strong> 600</li>
+              <li><strong>Vehicles:</strong> 600</li>
+              <li><strong>Daily Trip Capacity:</strong> 3,000</li>
+              <li><strong>Service Area:</strong> NYC &amp; Surrounding Counties</li>
+              <li><strong>Availability:</strong> 7 Days / 24 Hours</li>
+              <li><strong>Support:</strong> 24/7 bilingual customer support (English/Spanish)</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-badge">Services</div>
+            <h3>Transportation Support</h3>
+            <ul class="list-clean">
+              <li>Student Transportation Support</li>
+              <li>General Passenger Transportation</li>
+              <li>Same-Day &amp; Scheduled Trips</li>
+              <li>Route Coverage &amp; Overflow Support</li>
+              <li>Dispatch &amp; Logistics Coordination</li>
+            </ul>
+            <div class="pill-row">
+              <span class="pill">Same-Day Trips</span>
+              <span class="pill">Overflow Support</span>
+              <span class="pill">Dispatch Coordination</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-badge">Compliance</div>
+            <h3>Standards and Controls</h3>
+            <ul class="list-clean">
+              <li>NYC TLC Licensed Base (#B01389)</li>
+              <li>MAS-Compliant Operations</li>
+              <li>NYS DOH Aligned</li>
+              <li>HIPAA-Compliant Practices</li>
+              <li>GPS Trip Verification Enabled</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="capability">
+      <div class="container">
+        <div class="section-head">
+          <h2>Capability Statement</h2>
+          <p>Full service summary reflecting your current positioning for student and general transportation support services.</p>
+        </div>
+        <div class="docs-grid">
+          <article class="card">
+            <div class="card-badge">Core Capabilities</div>
+            <h3>What We Deliver</h3>
+            <ul class="bullet-list">
+              <li>Student Transportation Support Services</li>
+              <li>Non-Emergency &amp; Special Needs Transportation</li>
+              <li>Route Coverage &amp; Overflow Transportation</li>
+              <li>Same-Day &amp; Scheduled Trip Coordination</li>
+              <li>Dispatch, Routing &amp; Logistics Management</li>
+              <li>GPS Tracking &amp; Trip Verification</li>
+              <li>Subcontractor Driver Network Support</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-badge">Differentiators</div>
+            <h3>Why Metro Luxury</h3>
+            <ul class="bullet-list">
+              <li>Compliant with NYC TLC, NYS DOH, and transportation regulations</li>
+              <li>Experience managing high-volume transportation operations</li>
+              <li>Scalable driver network for contract and overflow support</li>
+              <li>Real-time GPS tracking and trip accountability</li>
+              <li>Strong on-time performance and service reliability</li>
+              <li>Audit-ready systems and operational controls</li>
+              <li>Real-time trip monitoring with automated ETA updates</li>
+              <li>Professionally trained drivers focused on safety, reliability, and quality service</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="two-grid">
+          <article class="card">
+            <div class="card-badge">Past Performance</div>
+            <h3>2025 Performance Snapshot</h3>
+            <ul class="bullet-list">
+              <li>Managed daily transportation operations across NYC</li>
+              <li>Supported healthcare and broker-based transportation systems</li>
+              <li>Maintained compliance with trip verification requirements</li>
+              <li>Improved driver performance through compliance monitoring</li>
+              <li>Successfully completed 400,000+ trips across NYC in 2025</li>
+              <li>Over $11M in transportation services delivered in 2025</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-badge">Capacity and Company Snapshot</div>
+            <h3>Metro Luxury Inc.</h3>
+            <ul class="bullet-list">
+              <li>Access to subcontractor driver network</li>
+              <li>Ability to support subcontracting and overflow route coverage for prime contractors</li>
+              <li>Rapid deployment for same-day and scheduled services</li>
+              <li>Bilingual live customer service 24/7</li>
+              <li>TLC Base #: B01389</li>
+              <li>Office: (718) 665-4900 / (718) 665-5079</li>
+              <li>Email: info@metroluxurycorp.com</li>
+              <li>Website: metroluxurycorp.com</li>
+              <li>NAICS Codes: 485991 and 485999</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>Metro Luxury Inc. | 625 E 137th Street, Bronx, NY 10454</div>
+      <div><a href="mailto:info@metroluxurycorp.com">info@metroluxurycorp.com</a> | <a href="https://metroluxurycorp.com" target="_blank" rel="noopener">metroluxurycorp.com</a></div>
+    </div>
+  </footer>
+</body>
+</html>
